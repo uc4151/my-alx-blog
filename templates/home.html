@@ -3,22 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Intelvibez</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+    <title>Intelvibez</title>
+    <link rel="stylesheet" href="static/styles/style.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to Intelvibez Blog</h1>
-        <p>Your go-to platform for insightful blogs.</p>
-        <nav>
-            <a href="{{ url_for('home') }}">Home</a>
-            <a href="{{ url_for('register') }}">Sign Up</a>
-            <a href="{{ url_for('login') }}">Log In</a>
-        </nav>
+        <div class="header-content">
+            <h1>Intelvibez</h1>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#blogs">Blogs</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="auth-buttons">
+                <a href="/signup">Sign Up</a>
+                <a href="/login">Log In</a>
+            </div>
+        </div>
     </header>
     <main>
-        <h2>Recent Posts</h2>
-        <p>Explore the latest blog posts here...</p>
+        <section class="welcome-note">
+            <h2>Welcome to Intelvibez Blog</h2>
+            <p>Your go-to platform for insightful blogs. Sign up to create your own blog posts or log in to explore the content.</p>
+        </section>
     </main>
 </body>
 </html>
