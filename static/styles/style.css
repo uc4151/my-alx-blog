@@ -17,6 +17,21 @@ header {
     align-items: center;
 }
 
+header nav a {
+    color: white; /* Set the menu text color to white */
+    text-decoration: none; /* Remove underline from links */
+    margin: 0 10px; /* Add some spacing between links */
+}
+
+header nav a:hover {
+    text-decoration: underline; /* Underline links on hover */
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
 .header-content h1 {
     margin: 0;
     font-size: 1.8em;
@@ -27,6 +42,91 @@ nav {
     display: flex;
     gap: 20px;
     margin-left: auto; /* Push the menu to the far right */
+}
+
+/* Buttons */
+header .auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+
+
+header .auth-buttons a {
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 0.9em;
+    color: white;
+    background-color: #ffa500; /* Reddish yellow */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+header .auth-buttons a:hover {
+    background-color: #cc8400; /* Darker shade of Reddish yellow */
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+    background-color: #ffffff; /* White */
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-note {
+    text-align: center;
+}
+
+.welcome-note h2 {
+    font-size: 2em;
+    color: #ffa500; /* Reddish yellow */
+}
+
+.welcome-note p {
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #333;
+}/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #9e8787; /* Light grey */
+    color: #333; /* Dark grey */
+}
+
+/* Header Styles */
+header {
+    background-color: #312f2b; /* Reddish yellow */
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between; /* Space between h1 and rest of the content */
+    align-items: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.header-content h1 {
+    margin: 0;
+    font-size: 1.8em;
+    flex: 0 0 auto; /* Prevent stretching */
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    gap: 20px;
+    margin-left: auto; /* Push the menu to the right */
+    flex: 1; /* Takes up remaining space */
+    justify-content: flex-end; /* Align items to the right */
 }
 
 /* Buttons */
@@ -72,4 +172,42 @@ main {
     font-size: 1.2em;
     margin-top: 10px;
     color: #333;
+}
+
+/* Login Page Styles */
+header.auth-header {
+    text-align: center !important; /* Center the text within the header */
+    background-color: #312f2b !important; /* Dark grey */
+    color: white !important;
+    padding: 20px !important;
+    width: 100% !important; /* Ensure the header takes full width */
+    box-sizing: border-box !important; /* Include padding in the element's total width and height */
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center elements horizontally */
+    justify-content: center; /* Center elements vertically */
+    height: 100vh; /* Full viewport height */
+    padding: 20px;
+    background-color: #f5f5f5; /* Light grey background */
+}
+
+.login-container form {
+    width: 100%;
+    max-width: 400px; /* Limit the width of the form */
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.login-container label,
+.login-container input,
+.login-container button {
+    width: 100%;
+    margin: 10px 0; /* Add some space between elements */
+    padding: 10px;
+    font-size: 1em;
 }
