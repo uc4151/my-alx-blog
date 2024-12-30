@@ -149,6 +149,16 @@ header .auth-buttons a:hover {
     background-color: #cc8400; /* Darker shade of Reddish yellow */
 }
 
+.welcome-background {
+    background-image: url('{{ url_for('static', filename='images/bg4.jpeg') }}'); /* Path to your background image */
+    background-size: cover; /* Ensure the image covers the entire container */
+    background-position: center; /* Center the image */
+    padding: 20px; /* Add some padding */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    color: white; /* Ensure text is readable */
+    text-align: center; /* Center the text */
+}
+
 /* Main Content Styles */
 main {
     padding: 20px;
@@ -210,6 +220,11 @@ header.auth-header {
     margin: 10px 0; /* Add some space between elements */
     padding: 10px;
     font-size: 1em;
+}
+
+/* About page centering */
+.center-text {
+    text-align: center;
 }
 
 .contact-container {
@@ -343,4 +358,41 @@ footer {
     background-color: #222;
     color: #aaa;
     font-size: 0.8em;
+}
+
+.content-section {
+    padding: 20px;
+    background-color: #f9f9f9; /* Light grey background */
+    margin-top: 20px;
+    border-radius: 8px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+.content-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.content-showcase {
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    align-items: center; /* Center items horizontally */
+    gap: 20px; /* Add space between items */
+}
+
+.content-item {
+    text-align: center;
+}
+
+.content-item img {
+    width: 100%;
+    max-width: 300px; /* Limit the width of the images */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+.content-item p {
+    margin-top: 10px;
+    font-size: 1.1em;
+    color: #333;
 }

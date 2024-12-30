@@ -8,14 +8,60 @@
 </head>
 <body>
     <header class="auth-header">
-        <h1>About Us</h1>
+        <h1 class="center-text">About Us</h1>
     </header>
     <main>
         <div class="content">
-            <h2>Welcome to Intelvibez</h2>
+            <h2 class="center-text">Welcome to Intelvibez</h2>
             <p>Intelvibez is a platform dedicated to sharing insightful articles and blogs on various topics. Our mission is to provide valuable content that educates, informs, and inspires our readers.</p>
             <p>Our team of writers is passionate about delivering high-quality content that covers a wide range of subjects, including technology, lifestyle, health, and more. We believe in the power of knowledge and aim to create a community where ideas can be shared and discussed.</p>
         </div>
+        
+        <section class="content-section">
+            <h2>OUR CONTENTS INCLUDES</h2>
+            <div class="content-showcase">
+                <div class="content-item">
+                    <img src="{{ url_for('static', filename='images/aboutlifestyle.jpeg') }}" alt="Lifestyle">
+                    <p>Insightful lifestyle blogs for your daily motivation</p>
+                </div>
+                <div class="content-item">
+                    <img src="{{ url_for('static', filename='images/aboutmusic.jpeg') }}" alt="Entertainment">
+                    <p>Entertainments: Music, sports, celebrity feeds</p>
+                </div>
+                <div class="content-item">
+                    <img src="{{ url_for('static', filename='images/aboutworld.jpeg') }}" alt="World">
+                    <p>World encyclopedia: You get to hear news about the world around you and learn as you do that</p>
+                </div>
+            </div>
+        </section>
     </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>About Intelvibez</h3>
+                <p>Intelvibez is a platform dedicated to sharing insightful articles and blogs on various topics. Our mission is to provide valuable content that educates, informs, and inspires our readers.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('about') }}">About</a></li>
+                    <li><a href="{{ url_for('blogs') }}">Blogs</a></li>
+                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact-form">
+                <h3>Contact Us</h3>
+                <form action="{{ url_for('contact') }}" method="POST">
+                    <input type="email" name="email" placeholder="Your Email Address" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 Intelvibez | Designed by Linda Uc
+        </div>
+    </footer>
 </body>
 </html>
