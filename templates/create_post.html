@@ -1,23 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Post - Intelvibez</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
-</head>
-<body>
-    <header>
-        <h1>Create a New Post</h1>
-    </header>
-    <main>
-        <form method="POST" action="{{ url_for('create_post') }}">
-            <label for="title">Post Title:</label>
-            <input type="text" id="title" name="title" required>
-            <label for="content">Post Content:</label>
-            <textarea id="content" name="content" rows="10" required></textarea>
-            <button type="submit">Publish</button>
+{% extends "base.html" %}
+{% block content %}
+    <div class="form-container">
+        <h2>New Post</h2>
+        <form method="POST" action="{{ url_for('new_post') }}">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                {{ form.title.label }} {{ form.title(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.content.label }} {{ form.content(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-primary") }}
+            </div>
         </form>
-    </main>
-</body>
-</html>
+    </div>
+{% endblock %}
