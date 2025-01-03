@@ -13,12 +13,13 @@ def register():
         return redirect(url_for('routes.home'))
     form = RegistrationForm()
     if form.validate_on_submit():
-        hashed_password = generate_password_hash(form.password.data, method='sha256')
+        hashed_password = generate_password_hash(form.password.data, method='pbkdf2:sha256')
         user = User(username=form.username.data, email=form.email.data, password=hashed_password)
         db.session.add(user)
         db.session.commit()
-        flash('Your account has been created!', 'success')
-        return redirect(url_for('routes.login'))
+        login_user(user)  # Log in the user after registration
+        flash(f'Welcome, {user.username}! Your account has been created.', 'success')
+        return redirect(url_for('routes.home'))  # Redirect to the home page
     return render_template('register.html', title='Register', form=form)
 
 @routes.route('/login', methods=['GET', 'POST'])

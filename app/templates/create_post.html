@@ -2,7 +2,7 @@
 {% block content %}
     <div class="form-container">
         <h2>New Post</h2>
-        <form method="POST" action="{{ url_for('new_post') }}">
+        <form method="POST" action="{{ url_for('routes.new_post') }}">
             {{ form.hidden_tag() }}
             <div class="form-group">
                 {{ form.title.label }} {{ form.title(class="form-control") }}

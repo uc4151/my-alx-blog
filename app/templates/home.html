@@ -15,7 +15,13 @@
                 <a href="{{ url_for('routes.about') }}">About</a>
                 <a href="{{ url_for('routes.blogs') }}">Blogs</a>
                 <a href="{{ url_for('routes.contact') }}">Contact</a>
-
+                {% if current_user.is_authenticated %}
+                    <a href="{{ url_for('routes.new_post') }}">New Post</a>
+                    <a href="{{ url_for('routes.logout') }}">Logout</a>
+                {% else %}
+                    <a href="{{ url_for('routes.login') }}">Login</a>
+                    <a href="{{ url_for('routes.register') }}">Register</a>
+                {% endif %}
             </nav>
             <div class="auth-buttons">
                 <a href="/register">Sign Up</a>
@@ -26,8 +32,12 @@
     <main>
         <section class="welcome-note">
             <div class="welcome-background">
-                <h2>Welcome to Intelvibez Blog</h2>
-                <p>Your go-to platform for insightful blogs. Sign up to create your own blog posts or log in to explore the content.</p>
+                {% if current_user.is_authenticated %}
+            <h2>Welcome Back, {{ current_user.username }}!</h2>
+        {% else %}
+            <h2>Welcome to Intelvibez blog!</h2>
+            <p>Your go-to platform for insightful blogs. Sign up to create your own blog posts or log in to explore the content.</p>
+        {% endif %}
             </div>
         </section>
     </main>
